@@ -1,0 +1,14 @@
+<!-- Welcome message that shows for 3 seconds -->
+<div *ngIf="showWelcome" class="welcome-message card p-5 shadow">
+  <h2 class="text-success">Welcome, {{ patientName }}!</h2>
+  <h3> Your Patient ID : {{patientId}}</h3>
+  <p class="lead">This is your patient dashboard.</p>
+</div>
+
+<!-- Main Content (Navbar, Dashboard, Footer) that takes the full screen -->
+<div *ngIf="!showWelcome" class="main-content">
+  <app-patient-navbar></app-patient-navbar>
+  <app-dashboard></app-dashboard>
+  <app-patient-feedback></app-patient-feedback>
+  
+</div>

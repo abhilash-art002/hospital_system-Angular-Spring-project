@@ -1,0 +1,43 @@
+<div class="report-container">
+  <h2 class="heading">🩺 Patient Medical Report</h2>
+
+  <!-- Select Patient -->
+  <div class="form-group">
+    <label for="patient">Select Patient:</label>
+    <select id="patient" [(ngModel)]="selectedAppointmentId" (change)="selectedPatient($event)">
+      <option *ngFor="let appointment of appointments" [value]="appointment.id">
+        {{ appointment.patient.fullName }} ({{ appointment.diseases }})
+      </option>
+    </select>
+  </div>
+
+  <!-- Report Details -->
+  <div *ngIf="selectedPatient" class="card report-card">
+    <div class="card-body">
+      <h5 class="card-title">👤 Patient Details</h5>
+      <p><strong>Name:</strong> {{ getPatientDetails()?.fullname }}</p>
+      <p><strong>Age:</strong> {{ getPatientDetails()?.age }}</p>
+      <p><strong>Gender:</strong> {{ getPatientDetails()?.gender }}</p>
+      <p><strong>Contact:</strong> {{ getPatientDetails()?.phno }}</p>
+
+      <h5 class="section-title">📋 Medical History</h5>
+      <p><strong>Diagnosis:</strong> {{ getPatientDetails()?.diagnosis }}</p>
+
+      <h5 class="section-title">💊 Prescribed Medicines</h5>
+      <ul>
+        <li *ngFor="let medicine of getPatientDetails()?.medicines">
+          {{ medicine.name }} - {{ medicine.dosage }}
+        </li>
+      </ul>
+
+      <h5 class="section-title">📝 Treatment Summary</h5>
+      <p>{{ getPatientDetails()?.treatmentSummary }}</p>
+
+      <!-- Buttons -->
+      <div class="btn-container">
+        <button class="btn btn-print" (click)="printReport()">🖨️ Print Report</button>
+        <button class="btn btn-save" (click)="saveReport()">💾 Save Report</button>
+      </div>
+    </div>
+  </div>
+</div>

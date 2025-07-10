@@ -1,0 +1,28 @@
+.text-pending {
+  color:#fff3cd;  /* yellow color */
+  font-size: 18px;
+  background-color: #ffc107; /* light yellow background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+
+.text-pending:hover {
+  background-color: #feeebf; /* darker yellow background on hover */
+  color: #ffbf00; ;
+}
+
+.text-complete {
+  color:   #c6f4d6;/* green color */
+  font-size: 18px;
+  background-color: #28a745; /* light green background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.text-complete:hover {
+  background-color: #b2f2cc; /* darker green background on hover */
+  color:#28a745
+}

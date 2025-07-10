@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Prescription Form</h2>
+
+  <!-- Select Patient -->
+  <label for="patient">Select Patient:</label>
+  <select id="patient" [(ngModel)]="selectedAppointmentId" (change)="onSelectAppointment($event)">
+    <option *ngFor="let appointment of appointments" [value]="appointment.id">
+      {{ appointment.patient.fullName }} ({{ appointment.diseases }})
+    </option>
+  </select>
+  
+ 
+
+  <!-- Prescription Form -->
+  <form *ngIf="selectedAppointmentId" (ngSubmit)="submitPrescription()">
+    <label>Diagnosis:</label>
+    <input type="text" [(ngModel)]="prescription.diagnosis" name="diagnosis" required />
+
+    <label>Medicines:</label>
+    <input type="text" [(ngModel)]="medicinesInput" name="medicines" (change)="updateMedicines()" required />
+    <small>Enter medicines separated by commas (e.g., Paracetamol, Ibuprofen)</small>
+
+    <label>Dosages:</label>
+    <input type="text" [(ngModel)]="prescription.dosages" name="dosages" required />
+
+    <label>Instructions:</label>
+    <textarea [(ngModel)]="prescription.instructions" name="instructions" required></textarea>
+
+    <button type="submit">Submit Prescription</button>
+  </form>
+</div>

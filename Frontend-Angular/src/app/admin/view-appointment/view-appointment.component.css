@@ -1,0 +1,32 @@
+.container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.pending {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+.complete {
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+}

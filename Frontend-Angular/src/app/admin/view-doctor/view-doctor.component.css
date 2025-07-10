@@ -1,0 +1,90 @@
+/* Background container */
+.doctor-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background image with overlay */
+.doctor-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../../assets/images/fun-bg.jpg') no-repeat center center/cover;
+  filter: brightness(50%); /* Adjust brightness to fade */
+  z-index: -1;
+}
+
+/* Card design */
+.doctor-card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Table styling */
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Table header */
+.doctor-table thead tr {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+}
+
+/* Table rows */
+.doctor-table tbody tr {
+  text-align: center;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.doctor-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.animated-btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Success button */
+.btn-success {
+  background: linear-gradient(45deg, #28a745, #218838);
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(45deg, #218838, #28a745);
+}
+
+/* Delete button */
+.btn-danger {
+  background: linear-gradient(45deg, #dc3545, #c82333);
+  border: none;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(45deg, #c82333, #dc3545);
+}

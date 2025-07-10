@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-5 offset-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <p class="fs-3 text-center">Add Doctor</p>
+
+          <!-- Success & Error Messages -->
+          <p *ngIf="successMessage" class="fs-5 text-center text-success">{{ successMessage }}</p>
+          <p *ngIf="errorMessage" class="fs-5 text-center text-danger">{{ errorMessage }}</p>
+
+          <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input formControlName="fullName" type="text" class="form-control" required>            
+
+             
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">DOB</label>
+              <input formControlName="dob" type="date" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Qualification</label>
+              <input formControlName="qualification" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Specialist</label>
+              
+                <select formControlName="specialistField" class="form-control" required>
+                <option value="">---select---</option>
+                <option *ngFor="let s of specialists" [value]="s">{{ s }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">E-mail address</label>
+              <input formControlName="email" type="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Mobile No.</label>
+              <input formControlName="mobile" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn bg-success text-white col-md-12" [disabled]="doctorForm.invalid">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

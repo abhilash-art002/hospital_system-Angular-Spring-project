@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2 class="text-center">Your Appointments</h2>
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Doctor</th>
+        <th>Specialty</th>
+        <th>Appointment Date</th>
+        <th>Disease</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.doctor.fullName }}</td>
+        <td>{{ appointment.doctor.specialistField }}</td>
+        <td>{{ appointment.appointDate }}</td>
+        <td>{{ appointment.diseases }}</td>
+        <td>
+          <span [ngClass]="{'text-pending': appointment.status === 'Pending', 'text-complete': appointment.status === 'complete'}">
+            {{ appointment.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,54 @@
+/* Ensuring full height for HTML and body */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* The container takes the full height of the viewport */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make sure it covers full viewport height */
+  justify-content: space-between;
+}
+
+/* Welcome message styles */
+.welcome-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.text-success {
+  color: #28a745;
+  font-size: 90px;
+}
+.lead {
+  font-size: 1.2rem;
+}
+
+/* Main content after the welcome message */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Full height */
+}
+
+.app-navbar {
+  /* Optional: Add some styles to ensure navbar stretches across the screen */
+  background-color: #f8f9fa;
+}
+
+.app-footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.app-dashboard {
+  flex-grow: 1; /* Take up the remaining space between the navbar and footer */
+  padding: 20px;
+  overflow: auto; /* Ensure content is scrollable if needed */
+}

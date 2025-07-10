@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome (already being used) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="d-flex">
+    <div class="container-fluid p-4">
+      <div class="row">
+        <!-- Logout Button on Top Right -->
+        <div class="col-12 text-end ">
+          <button class="btn btn-danger " (click)="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+        </div>
+  
+        <!-- Welcome Section -->
+        <div class="col-12">
+          <div class="welcome-card shadow-sm p-3 rounded">
+            <h3>Welcome, Dr. {{ doctorName }}! (ID: {{ doctorId }})</h3>
+            <p class="text-muted">"Your dedication keeps patients healthy. Have a great day!"</p>
+          </div>
+        </div>
+  
+        <!-- Doctor Overview Card -->
+        <div class="col-md-4 mt-3">
+          <div class="card doctor-info-card shadow-lg">
+            <div class="card-body text-center">
+              <img src="../../../assets/images/doct.jpeg" class="doctor-avatar mb-3" alt="Doctor Image">
+              <h5 class="card-title">Dr. {{ doctorName }}</h5>
+              <p class="card-text text-muted">Specialist in {{ specialization || 'General Medicine' }}</p>
+              <a [routerLink]="['/doctor-profile', doctorId]" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+  
+       <!-- Quick Actions -->
+<div class="col-md-8 mt-3">
+  <div class="quick-actions p-3 shadow-sm rounded">
+    <h5 class="mb-3">Quick Actions</h5>
+    <div class="row g-3">
+      <div class="col-6 col-md-3" *ngFor="let action of quickActions">
+        <div class="action-card text-center p-3" [routerLink]="action.link">
+          <i class="{{ action.icon }} action-icon mb-2"></i>
+          <div class="action-label">{{ action.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Appointment Summary -->
+  <div class="col-md-6 mt-3">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white">
+        <i class="fa-solid fa-calendar-day"></i> Upcoming Appointments
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let appointment of upcomingAppointments">
+          <strong>{{ appointment.fullname }}</strong> - {{ appointment.appointDate }}
+        </li>
+        <li *ngIf="upcomingAppointments.length === 0" class="list-group-item text-muted">
+          No upcoming appointments.
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+        <!-- Recent Patients -->
+        <div class="col-md-6 mt-3">
+          <div class="card shadow-sm">
+            <div class="card-header bg-info text-white">
+              <i class="fa-solid fa-user-injured"></i> Recent Patients
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" *ngFor="let patient of recentPatients">
+                {{ patient.name }} - {{ patient.condition }}
+              </li>
+              <li *ngIf="recentPatients.length === 0" class="list-group-item text-muted">
+                No recent patients.
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+

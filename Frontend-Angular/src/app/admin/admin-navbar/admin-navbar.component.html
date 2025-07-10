@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-success navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/" ><i class="fa-solid fa-hospital"></i> MEDICO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" routerLink="/admin-add_doctor">DOCTOR</a></li>
+        <li class="nav-item"><a class="nav-link active" routerLink="/view-doctor">VIEW DOCTOR</a></li>
+        <li class="nav-item"><a class="nav-link active" routerLink="/view-appointment">VIEW APPOINTMENT</a></li>
+      </ul>
+
+    
+      
+      <button class="btn btn-light" (click)="logout()">
+        <i class="fa-solid fa-sign-out-alt"></i> Logout
+      </button>
+      
+       
+     
+      
+
+    </div>
+  </div>
+</nav>

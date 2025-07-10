@@ -1,0 +1,98 @@
+/* General Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table Headers */
+th {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Table Rows */
+td {
+  font-size: 16px;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect on rows */
+tr:hover {
+  background: #f1f1f1;
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+}
+
+/* Input field for comment */
+input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect */
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Save Button */
+button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  margin-left: 5px;
+}
+
+button:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+/* Heading Styling */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  input[type="text"] {
+    width: 70%;
+  }
+
+  button {
+    padding: 6px 12px;
+  }
+}

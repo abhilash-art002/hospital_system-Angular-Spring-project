@@ -1,0 +1,84 @@
+<div class="back-image">
+  <h2 style="text-align: center;">BOOK APPOINTMENT</h2>
+
+  <div class="container ">
+    <div class="side-image">
+
+    </div>
+    <div class="form-container ">
+      <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()">
+        
+        <!-- Patient ID (Hidden) -->
+        <input type="hidden" formControlName="patientId" />
+
+        <!-- Full Name (Auto-Fetched) -->
+        <div class="input-container">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" formControlName="fullname" placeholder="Full Name" readonly />
+        </div>
+
+        <!-- Email (Auto-Fetched) -->
+        <div class="input-container">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" formControlName="email" placeholder="Email" readonly />
+        </div>
+
+        <!-- Gender -->
+        <div class="input-container">
+          <i class="fa-solid fa-venus-mars"></i>
+          <select formControlName="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <!-- Age -->
+        <div class="input-container">
+          <i class="fa-solid fa-calendar"></i>
+          <input type="number" formControlName="age" placeholder="Age" required />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="input-container">
+          <i class="fa-solid fa-phone"></i>
+          <input type="text" formControlName="phno" placeholder="Phone Number" required />
+        </div>
+
+        <!-- Address -->
+        <div class="input-container">
+          <i class="fa-solid fa-location-dot"></i>
+          <textarea formControlName="address" placeholder="Address" required></textarea>
+        </div>
+
+        <!-- Doctor Selection -->
+        <div class="input-container">
+          <i class="fa-solid fa-user-md"></i>
+          <select formControlName="doctorId" (change)="onDoctorSelect($event)" required>
+            <option value="">Select Doctor</option>
+            <option *ngFor="let doctor of doctors" [value]="doctor.id">
+              {{ doctor.fullName }} ({{ doctor.specialistField }})
+            </option>
+          </select>
+        </div>
+
+        <!-- Appointment Date -->
+        <div class="input-container">
+          <i class="fa-solid fa-calendar-check"></i>
+          <input type="date" formControlName="appointDate" required />
+        </div>
+
+        <!-- Diseases -->
+        <div class="input-container">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <textarea formControlName="diseases" placeholder="Diseases" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="appointmentForm.invalid">
+          <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

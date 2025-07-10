@@ -1,0 +1,42 @@
+
+<div class="edit-doctor-container">
+  <div class="image-section">
+    <img src="../../../assets/images/update.png" alt="Doctor Image">
+  </div>
+  <div class="form-section">
+    <h2>Edit Doctor Details</h2>
+    <form (ngSubmit)="updateDoctor()">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.fullName" name="fullName" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">DOB</label>
+        <input type="date" class="form-control" [(ngModel)]="doctor.dob" name="dob" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Qualification</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.qualification" name="qualification" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Specialist</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.specialistField" name="specialistField" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input type="email" class="form-control readonly-field" [(ngModel)]="doctor.email" name="email" required readonly>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mobile</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.mobile" name="mobile" required>
+      </div>
+
+      <button type="submit" class="btn btn-success">Update</button>
+    </form>
+  </div>
+</div>

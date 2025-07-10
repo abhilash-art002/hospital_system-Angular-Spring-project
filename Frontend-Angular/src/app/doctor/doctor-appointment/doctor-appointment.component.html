@@ -1,0 +1,48 @@
+
+<h2>Doctor Appointments</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Patient Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Appointment Date</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Diseases</th>
+      <th>Address</th>
+      <!-- <th>Status</th> -->
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.fullname }}</td>
+      <td>{{ appointment.gender }}</td>
+      <td>{{ appointment.age }}</td>
+      <td>{{ appointment.appointDate }}</td>
+      <td>{{ appointment.email }}</td>
+      <td>{{ appointment.phno }}</td>
+      <td>{{ appointment.diseases }}</td>
+      <td>{{ appointment.address }}</td>
+     
+      <td>
+        <ng-container *ngIf="appointment.status === 'Pending'; else statusText">
+          <input 
+            type="text" 
+            [(ngModel)]="appointment.comment" 
+            placeholder="Enter status or note"
+          />
+          <button (click)="updateStatus(appointment.id, appointment.comment)">Save</button>
+        </ng-container>
+      
+        <ng-template #statusText>
+          {{ appointment.status }}
+        </ng-template>
+      </td>
+      
+      
+    </tr>
+  </tbody>
+</table>

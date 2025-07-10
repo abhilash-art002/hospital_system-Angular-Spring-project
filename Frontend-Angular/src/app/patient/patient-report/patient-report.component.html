@@ -1,0 +1,51 @@
+<div class="prescription-container">
+  <!-- Header with logo and hospital details -->
+  <div class="header">
+    <img src="../../../assets/images/logo1.webp" alt="Medico Logo" class="logo">
+    <div class="hospital-info">
+      <h1 class="hospital-name">Medico Hospital</h1>
+      <p class="address">Cuttack, Odisha - 754021</p>
+      <p class="date"><i class="fas fa-calendar-alt"></i> {{ today | date: 'fullDate' }}</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="head-tag">
+    <h2>Prescription Report </h2>
+  </div>
+
+  <!-- Patient Heading -->
+  <h3><i class="fas fa-user-injured"></i> Name: <strong>{{ patientName }}</strong></h3>
+
+  <!-- Prescription Details Table -->
+  <h3><i class="fas fa-file-medical-alt"></i> Prescription Details:</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Diagnosis</th>
+        <th>Dosages</th>
+        <th>Instructions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of prescriptionDetails">
+        <td>{{ detail.id }}</td>
+        <td>{{ detail.diagnosis }}</td>
+        <td>{{ detail.dosages }}</td>
+        <td>{{ detail.instructions }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Medicines List -->
+  <h3><i class="fas fa-pills"></i> Medicines:</h3>
+  <ul class="medicine-list">
+    <li *ngFor="let medicine of medicines">{{ medicine }}</li>
+  </ul>
+
+  <!-- Print Button -->
+  <button class="btn btn-primary print-btn" (click)="printReport()">
+    <i class="fas fa-print"></i> Print Report
+  </button>
+</div>

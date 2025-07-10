@@ -1,0 +1,103 @@
+.report-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #f3f9ff, #e2f0fb);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e88e5;
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+  transition: border 0.3s;
+}
+
+select:focus {
+  border-color: #1e88e5;
+  outline: none;
+}
+
+.report-card {
+  background: #ffffff;
+  border-left: 6px solid #1e88e5;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 25px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #3949ab;
+}
+
+ul {
+  padding-left: 20px;
+  list-style-type: circle;
+  color: #555;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-print {
+  background: #42a5f5;
+  color: white;
+}
+
+.btn-print:hover {
+  background: #1e88e5;
+  transform: scale(1.05);
+}
+
+.btn-save {
+  background: #66bb6a;
+  color: white;
+}
+
+.btn-save:hover {
+  background: #43a047;
+  transform: scale(1.05);
+}

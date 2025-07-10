@@ -1,0 +1,95 @@
+/* 📌 Full-Screen Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../../../assets/images/login-background.avif') no-repeat center center/cover;
+}
+
+/* 📌 Card Layout */
+.login-card {
+  display: flex;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: scale(1.03);
+}
+
+/* 📌 Left Side - Image */
+.login-image {
+  width: 50%;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 📌 Right Side - Form */
+.login-form {
+  width: 50%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* 📌 Gradient Text */
+.text-gradient {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 📌 Stylish Inputs */
+.stylish-input {
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+.stylish-input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* 📌 Login Button */
+.stylish-btn {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.stylish-btn:hover {
+  background: linear-gradient(45deg, #00c6ff, #007bff);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* 📌 Highlighted Link */
+.text-highlight {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-highlight:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

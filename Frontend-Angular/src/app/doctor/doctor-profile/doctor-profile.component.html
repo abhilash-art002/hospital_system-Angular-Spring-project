@@ -1,0 +1,62 @@
+<div class="profile-container">
+  <h2 class="heading">Doctor Profile Settings</h2>
+
+  <div class="card profile-card">
+    <div class="card-body">
+      <!-- Profile Picture -->
+      <div class="profile-img-container">
+        <img src="../../../assets/images/doc-1.jpg" alt="Doctor Profile" class="profile-img">
+      </div>
+
+      <!-- Profile Form -->
+      <form (ngSubmit)="updateProfile()">
+        <div class="form-group">
+          <label>Full Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="doctor.fullName" name="fullName">
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" class="form-control" [(ngModel)]="doctor.email" name="email" disabled>
+        </div>
+
+        <div class="form-group">
+          <label>Specialization:</label>
+          <input type="text" class="form-control" [(ngModel)]="doctor.specialistField" name="specialization">
+        </div>
+
+        <!-- Original Password Field -->
+        <div class="form-group password-field">
+          <label>Current Password:</label>
+          <div class="input-group">
+            <input 
+              [type]="showPassword ? 'text' : 'password'" 
+              class="form-control" 
+              [value]="doctor.password" 
+              readonly>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-light" (click)="togglePasswordVisibility()">
+                <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+              </button>
+              <button type="button" class="btn btn-light" (click)="enablePasswordEdit()">
+                <i class="fa fa-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Password Field (Only Visible When Editing) -->
+        <div class="form-group" *ngIf="isEditingPassword">
+          <label>New Password:</label>
+          <input type="password" class="form-control" [(ngModel)]="doctor.newPassword" name="newPassword">
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" class="btn btn-secondary" (click)="resetChanges()">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

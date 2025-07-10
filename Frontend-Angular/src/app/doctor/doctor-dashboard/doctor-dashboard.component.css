@@ -1,0 +1,130 @@
+body {
+  background: linear-gradient(to right, #f0f4ff, #e0f7fa);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Welcome Section */
+.welcome-card {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(106, 17, 203, 0.3);
+}
+
+
+/* Doctor Profile Card */
+.doctor-info-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.doctor-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bcd4;
+}
+
+/* Quick Actions */
+.quick-actions {
+  background: linear-gradient(to right, #ffffff, #f0faff);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #e0f2f1;
+}
+
+.quick-actions button {
+  flex: 1;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.quick-actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Headers */
+.card-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Upcoming Appointments */
+.bg-dark {
+  background-color: #3c3f58 !important;
+}
+
+.bg-dark.text-white {
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+/* Recent Patients */
+.bg-info {
+  background: linear-gradient(to right, #00b4db, #0083b0) !important;
+  color: white;
+}
+
+/* Common Card Styling */
+.card {
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout Button */
+.btn-danger {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  color: #fff;
+}
+/* Quick Action Card Style */
+.action-card {
+  background: linear-gradient(to top, #ffffff, #f2f6ff);
+  border-radius: 15px;
+  border: 1px solid #d0d7e2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to top, #e9f0ff, #ffffff);
+}
+
+.action-icon {
+  font-size: 2.5rem;
+  color: #5c67f2;
+}
+
+.action-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+}

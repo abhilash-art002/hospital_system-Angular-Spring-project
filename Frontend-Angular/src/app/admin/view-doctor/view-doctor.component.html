@@ -1,0 +1,53 @@
+<div class="doctor-container">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card shadow doctor-card">
+          <div class="card-body">
+            <p class="fs-3 text-center text-light">Doctor Details</p>
+
+            <!-- Success & Error Messages -->
+            <p *ngIf="successMessage" class="fs-5 text-center text-success">{{ successMessage }}</p>
+            <p *ngIf="errorMessage" class="fs-5 text-center text-danger">{{ errorMessage }}</p>
+
+            <table class="table table-bordered doctor-table">
+              <thead>
+                <tr>
+                  <th>Full Name</th>
+                  <th>DOB</th>
+                  <th>Qualification</th>
+                  <th>Specialist</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Action</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let doctor of doctors">
+                  <td>{{ doctor.fullName }}</td>
+                  <td>{{ doctor.dob }}</td>
+                  <td>{{ doctor.qualification }}</td>
+                  <td>{{ doctor.specialistField }}</td>
+                  <td>{{ doctor.email }}</td>
+                  <td>{{ doctor.mobile }}</td>
+                  <td>
+                    <button class="btn btn-success btn-sm animated-btn" (click)="editDoctor(doctor.email)">
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger btn-sm animated-btn" (click)="deleteDoctor(doctor.email)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

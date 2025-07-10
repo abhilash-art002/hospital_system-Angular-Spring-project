@@ -1,0 +1,17 @@
+/* Style the heading */
+.heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Resize the patient image */
+.patient-img {
+  width: 100px;  /* Adjust width */
+  height: 100px; /* Adjust height */
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto; /* Centering the image */
+}

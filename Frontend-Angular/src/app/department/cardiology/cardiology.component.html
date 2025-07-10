@@ -1,0 +1,33 @@
+<div class="cardiology-container">
+  <!-- Heading -->
+  <h2 class="title">Cardiology Department</h2>
+
+  <!-- Doctor Cards -->
+  <div class="doctor-cards">
+    <div class="doctor-card" *ngFor="let doctor of doctors">
+      <img [src]="doctor.image" alt="Doctor">
+      <h3>{{ doctor.name }}</h3>
+      <p>{{ doctor.specialty }}</p>
+    </div>
+  </div>
+ 
+
+  <!-- Gallery -->
+  <h2 class="section-title">Department Gallery</h2>
+  <div class="gallery">
+    <img *ngFor="let image of galleryImages" [src]="image" alt="Cardiology">
+  </div>
+
+  <!-- Achievements Table -->
+  <h2 class="section-title">Achievements</h2>
+  <table class="achievements-table">
+    <tr>
+      <th>Year</th>
+      <th>Achievement</th>
+    </tr>
+    <tr *ngFor="let achievement of achievements">
+      <td>{{ achievement.year }}</td>
+      <td>{{ achievement.description }}</td>
+    </tr>
+  </table>
+</div>

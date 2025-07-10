@@ -1,0 +1,32 @@
+<h2 class="heading">Patients</h2>
+
+<div class="d-flex flex-wrap gap-3">
+  <div class="card" style="width: 18rem;" *ngFor="let appointment of appointments; let i = index">
+    <!-- Display different image based on gender -->
+    <img 
+      [src]="appointment.gender === 'Male' ? '../../../assets/images/male.jpg' : '../../../assets/images/female.png'" 
+      class="card-img-top patient-img" 
+      alt="Patient Image"
+    >
+    <div class="card-body">
+      <!-- Patient Name -->
+      <h5 class="card-title">{{ appointment.fullname }}</h5>
+
+      <!-- View Details Button -->
+      <button class="btn btn-primary w-100" (click)="toggleDetails(i)">
+        {{ showDetails[i] ? 'Hide Details' : 'View Details' }}
+      </button>
+
+      <!-- Details Section (Shown only when View Details is clicked) -->
+      <div *ngIf="showDetails[i]" class="mt-3">
+        <p><strong>Gender:</strong> {{ appointment.gender }}</p>
+        <p><strong>Age:</strong> {{ appointment.age }}</p>
+        <p><strong>Appointment Date:</strong> {{ appointment.appointDate }}</p>
+        <p><strong>Email:</strong> {{ appointment.email }}</p>
+        <p><strong>Phone:</strong> {{ appointment.phno }}</p>
+        <p><strong>Diseases:</strong> {{ appointment.diseases }}</p>
+        <p><strong>Address:</strong> {{ appointment.address }}</p>
+      </div>
+    </div>
+  </div>
+</div>
